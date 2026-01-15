@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Gamepad2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const navLinks = [
   { name: 'HOME', href: '#home' },
@@ -40,8 +41,8 @@ export const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-cyan-500/20'
-          : 'bg-transparent'
+        ? 'bg-background/95 backdrop-blur-md border-b border-cyan-500/20'
+        : 'bg-transparent'
         }`}
     >
       <div className="container mx-auto px-4">
@@ -53,16 +54,14 @@ export const Navbar = () => {
             whileHover={{ scale: 1.05 }}
           >
             <div className="relative">
-              <Gamepad2 className="w-6 h-6 md:w-8 md:h-8 text-cyan-400" />
+              <img src={logo} alt="UPAGRAHA'26 Logo" className="w-28 h-28 md:w-32 md:h-32 object-contain" />
               <motion.div
-                className="absolute inset-0 bg-cyan-400/30 blur-md"
-                animate={{ opacity: [0.5, 1, 0.5] }}
+                className="absolute inset-0 bg-cyan-400/20 blur-md rounded-full"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
             </div>
-            <span className="font-pixel text-[10px] md:text-xs text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400">
-              UPAGRAHA'26
-            </span>
+            {/* Text removed as per user request */}
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -72,8 +71,8 @@ export const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={`relative px-4 py-2 font-pixel text-[10px] transition-colors ${activeSection === link.href.slice(1)
-                    ? 'text-cyan-400'
-                    : 'text-muted-foreground hover:text-foreground'
+                  ? 'text-cyan-400'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -159,8 +158,8 @@ export const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className={`block py-3 font-pixel text-xs border-b border-muted/20 last:border-0 ${activeSection === link.href.slice(1)
-                      ? 'text-cyan-400'
-                      : 'text-muted-foreground'
+                    ? 'text-cyan-400'
+                    : 'text-muted-foreground'
                     }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   initial={{ x: -20, opacity: 0 }}

@@ -3,12 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Globe, Star } from 'lucide-react';
 
-const sponsors = [
-  { name: 'SVCE', level: 'PLATINUM' },
-  { name: 'ECEA', level: 'GOLD' },
-  { name: 'IETE', level: 'GOLD' },
-  { name: 'RAIC', level: 'SILVER' },
-];
+
 
 export const Contact = () => {
   const ref = useRef(null);
@@ -18,57 +13,9 @@ export const Contact = () => {
     <section id="contact" className="relative py-20 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/20" />
-      
+
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
-        {/* Sponsors Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <div className="inline-flex items-center gap-3 mb-4">
-            <Star className="w-5 h-5 text-yellow-400" />
-            <span className="font-mono text-sm text-yellow-400">POWER-UPS</span>
-            <Star className="w-5 h-5 text-yellow-400" />
-          </div>
-          <h2 className="font-pixel text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 mb-8">
-            SPONSORS
-          </h2>
-          
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            {sponsors.map((sponsor, index) => (
-              <motion.div
-                key={sponsor.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="relative"
-              >
-                <div className="w-20 h-20 md:w-28 md:h-28 flex flex-col items-center justify-center bg-muted/50 border border-yellow-400/30 hover:border-yellow-400 transition-colors">
-                  <span className="font-pixel text-sm md:text-base text-foreground">{sponsor.name}</span>
-                  <span className={`font-mono text-[8px] mt-1 ${
-                    sponsor.level === 'PLATINUM' ? 'text-cyan-400'
-                    : sponsor.level === 'GOLD' ? 'text-yellow-400'
-                    : 'text-gray-400'
-                  }`}>
-                    {sponsor.level}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.8 }}
-            className="font-mono text-sm text-pink-400 mt-8 animate-pulse"
-          >
-            {'>>> MORE ALLIES JOINING SOON <<<'}
-          </motion.p>
-        </motion.div>
+
 
         {/* Contact Section */}
         <motion.div
@@ -99,9 +46,9 @@ export const Contact = () => {
             <h3 className="font-pixel text-xs text-cyan-400 mb-6">
               <span className="text-pink-400">{'>'}</span> HQ LOCATION
             </h3>
-            
+
             <div className="space-y-4">
-              <motion.div 
+              <motion.div
                 className="flex items-start gap-4 group"
                 whileHover={{ x: 5 }}
               >
@@ -114,7 +61,7 @@ export const Contact = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="flex items-start gap-4 group"
                 whileHover={{ x: 5 }}
               >
@@ -129,7 +76,7 @@ export const Contact = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="flex items-start gap-4 group"
                 whileHover={{ x: 5 }}
               >
@@ -157,11 +104,10 @@ export const Contact = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`w-10 h-10 flex items-center justify-center bg-muted border border-${social.color}-400/30 hover:border-${social.color}-400 transition-colors`}
                 >
-                  <social.icon className={`w-5 h-5 ${
-                    social.color === 'pink' ? 'text-pink-400'
+                  <social.icon className={`w-5 h-5 ${social.color === 'pink' ? 'text-pink-400'
                     : social.color === 'cyan' ? 'text-cyan-400'
-                    : 'text-yellow-400'
-                  }`} />
+                      : 'text-yellow-400'
+                    }`} />
                 </motion.a>
               ))}
             </div>
@@ -177,7 +123,7 @@ export const Contact = () => {
             <h3 className="font-pixel text-xs text-yellow-400 mb-4">
               <span className="text-cyan-400">{'>'}</span> READY FOR BATTLE?
             </h3>
-            
+
             <p className="font-mono text-sm text-foreground/80 mb-8">
               Join the ultimate tech showdown! Register now and prove you have what it takes to be a champion.
             </p>
@@ -212,6 +158,44 @@ export const Contact = () => {
             </motion.p>
           </motion.div>
         </div>
+
+        {/* Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-8 max-w-4xl mx-auto p-1 bg-gradient-to-br from-cyan-500/20 to-pink-500/20 border border-cyan-500/30 rounded-sm"
+        >
+          {/* Header */}
+          <div className="flex items-center gap-2 mb-2 px-2 pt-1">
+            <MapPin className="w-3 h-3 text-cyan-400" />
+            <span className="font-pixel text-[10px] text-cyan-400 tracking-widest">TACTICAL MAP VIEW</span>
+            <div className="h-px bg-cyan-500/30 flex-1" />
+          </div>
+
+          <div className="relative w-full h-[300px] overflow-hidden rounded-sm border border-cyan-500/20 group">
+            {/* The Map Iframe */}
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight={0}
+              marginWidth={0}
+              src="https://maps.google.com/maps?q=Sri+Venkateswara+College+of+Engineering,+Pennalur+Village,+Chennai+-+Bangaluru+High+Road,+Sriperumbudur+Tk,+Tamil+Nadu+602117&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-full grayscale invert-[.9] contrast-[1.2] sepia-[.2] opacity-70 group-hover:opacity-100 transition-all duration-500"
+            ></iframe>
+
+            {/* Scanline overlay for retro effect */}
+            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] opacity-20" />
+
+            {/* Map Marker overlay animation */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+              <div className="w-4 h-4 rounded-full border-2 border-red-500 animate-ping absolute" />
+              <div className="w-2 h-2 rounded-full bg-red-500 relative shadow-[0_0_10px_rgba(239,68,68,0.8)]" />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

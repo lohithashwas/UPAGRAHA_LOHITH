@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${arcadeBg})` }}
       >
@@ -38,40 +38,7 @@ export const Hero = () => {
 
       {/* Floating Energy Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${4 + Math.random() * 8}px`,
-              height: `${4 + Math.random() * 8}px`,
-              background: i % 3 === 0 
-                ? 'hsl(var(--neon-cyan))' 
-                : i % 3 === 1 
-                ? 'hsl(var(--neon-magenta))' 
-                : 'hsl(var(--neon-yellow))',
-              boxShadow: i % 3 === 0 
-                ? '0 0 15px hsl(var(--neon-cyan)), 0 0 30px hsl(var(--neon-cyan))' 
-                : i % 3 === 1 
-                ? '0 0 15px hsl(var(--neon-magenta)), 0 0 30px hsl(var(--neon-magenta))' 
-                : '0 0 15px hsl(var(--neon-yellow)), 0 0 30px hsl(var(--neon-yellow))',
-            }}
-            animate={{
-              y: [0, -150, 0],
-              x: [0, Math.random() * 100 - 50, 0],
-              opacity: [0.4, 1, 0.4],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 4,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+        {/* Floating Energy Particles - Removed */}
       </div>
 
       {/* Main Content */}
@@ -96,7 +63,7 @@ export const Hero = () => {
               <p className="font-pixel text-[8px] text-cyan-400 text-left mt-1">SVCE ECE</p>
             </div>
             <div className="px-4">
-              <motion.span 
+              <motion.span
                 className="font-pixel text-lg md:text-2xl text-yellow-400"
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
@@ -135,7 +102,7 @@ export const Hero = () => {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            
+
             <h1 className="relative font-pixel text-4xl md:text-6xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 drop-shadow-[0_0_30px_rgba(255,0,255,0.5)] tracking-wider">
               UPAGRAHA'26
             </h1>
@@ -178,7 +145,7 @@ export const Hero = () => {
           transition={{ delay: 1 }}
           className="mt-12"
         >
-          <Countdown targetDate="2026-02-22T10:00:00" />
+          <Countdown targetDate="2026-02-19T10:00:00" />
         </motion.div>
 
         {/* CTA Buttons - Arcade Style */}

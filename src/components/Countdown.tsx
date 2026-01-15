@@ -23,7 +23,7 @@ export const Countdown = ({ targetDate }: CountdownProps) => {
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = new Date(targetDate).getTime() - new Date().getTime();
-      
+
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -82,7 +82,7 @@ export const Countdown = ({ targetDate }: CountdownProps) => {
               <div className="w-16 md:w-24 h-20 md:h-28 bg-gradient-to-b from-gray-800 via-gray-900 to-black border-2 border-gray-700 rounded-sm overflow-hidden">
                 {/* Scanlines */}
                 <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.3)_2px,rgba(0,0,0,0.3)_4px)]" />
-                
+
                 {/* Number */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.span
@@ -100,7 +100,7 @@ export const Countdown = ({ targetDate }: CountdownProps) => {
 
                 {/* Top reflection */}
                 <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/5 to-transparent" />
-                
+
                 {/* Center line */}
                 <div className="absolute top-1/2 left-0 right-0 h-px bg-black/50" />
               </div>
@@ -143,7 +143,7 @@ export const Countdown = ({ targetDate }: CountdownProps) => {
         className="mt-6 px-6 py-2 border border-yellow-400/50 bg-yellow-400/10"
       >
         <span className="font-orbitron text-sm md:text-base text-yellow-400">
-          22 FEBRUARY 2026
+          19.02.2026
         </span>
       </motion.div>
     </div>

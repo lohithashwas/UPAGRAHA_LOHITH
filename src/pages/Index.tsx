@@ -10,6 +10,8 @@ import { Team } from '@/components/Team';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { ParticleBackground } from '@/components/ParticleBackground';
+import { Partners } from '@/components/Partners';
+import { Glimpse } from '@/components/Glimpse';
 
 const Index = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -45,8 +47,10 @@ const Index = () => {
           <main className="relative z-10">
             <Hero />
             <About />
+            <Glimpse />
             <Events />
             <Timeline />
+            <Partners />
             <Team />
             <Contact />
           </main>

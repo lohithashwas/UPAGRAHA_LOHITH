@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://pechacks.org/</title>
+  <link>https://pechacks.org/</link>
+
+<item>
+     <link>https://pechacks.org/</link>
+     <title>PEC Hacks | Hackathon</title>
+     <description>Join PEC HACKS 2.0, a 36-hr hackathon event in Chennai, India. Solve real-world challenges, and make a meaningful impact.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://pechacks.org/assets/PEC%20Hacks%202.0%20-%20Sponsor%20Deck.pdf</link>
+     <title></title>
+     
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

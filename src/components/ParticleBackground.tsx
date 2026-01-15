@@ -5,38 +5,7 @@ export const ParticleBackground = () => {
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {/* Floating Particles */}
-      {[...Array(30)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            background: i % 3 === 0 
-              ? 'hsl(var(--neon-cyan))' 
-              : i % 3 === 1 
-              ? 'hsl(var(--neon-magenta))' 
-              : 'hsl(var(--neon-yellow))',
-            boxShadow: i % 3 === 0 
-              ? '0 0 10px hsl(var(--neon-cyan))' 
-              : i % 3 === 1 
-              ? '0 0 10px hsl(var(--neon-magenta))' 
-              : '0 0 10px hsl(var(--neon-yellow))',
-          }}
-          animate={{
-            y: [0, -100, 0],
-            x: [0, Math.random() * 50 - 25, 0],
-            opacity: [0, 0.8, 0],
-            scale: [0, 1, 0],
-          }}
-          transition={{
-            duration: 5 + Math.random() * 5,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      {/* Floating Particles - Removed */}
 
       {/* Circuit Lines */}
       <svg className="absolute inset-0 w-full h-full opacity-5">

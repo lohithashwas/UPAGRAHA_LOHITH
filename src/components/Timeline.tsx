@@ -21,7 +21,7 @@ const timelineEvents = [
     color: 'green',
   },
   {
-    date: 'FEB 20',
+    date: 'FEB 17',
     title: 'REGISTRATION CLOSES',
     description: 'Last date to register',
     icon: Users,
@@ -29,7 +29,7 @@ const timelineEvents = [
     color: 'yellow',
   },
   {
-    date: 'FEB 22',
+    date: 'FEB 19',
     title: 'BATTLE DAY',
     description: 'The tournament begins!',
     icon: Trophy,
@@ -46,7 +46,7 @@ export const Timeline = () => {
     <section id="timeline" className="relative py-20 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-muted/10 via-background to-muted/10" />
-      
+
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -78,24 +78,21 @@ export const Timeline = () => {
                 className="flex gap-4"
               >
                 {/* Icon */}
-                <div className={`flex-shrink-0 w-12 h-12 flex items-center justify-center border-2 ${
-                  event.status === 'completed' 
-                    ? 'border-green-400 bg-green-400/20' 
+                <div className={`flex-shrink-0 w-12 h-12 flex items-center justify-center border-2 ${event.status === 'completed'
+                    ? 'border-green-400 bg-green-400/20'
                     : 'border-gray-600 bg-muted/50'
-                }`}>
-                  <event.icon className={`w-5 h-5 ${
-                    event.status === 'completed' ? 'text-green-400' : 'text-gray-400'
-                  }`} />
+                  }`}>
+                  <event.icon className={`w-5 h-5 ${event.status === 'completed' ? 'text-green-400' : 'text-gray-400'
+                    }`} />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pb-6 border-l-2 border-dashed border-gray-700 pl-4 -ml-2">
-                  <span className={`font-orbitron text-sm font-bold ${
-                    event.color === 'cyan' ? 'text-cyan-400'
-                    : event.color === 'green' ? 'text-green-400'
-                    : event.color === 'yellow' ? 'text-yellow-400'
-                    : 'text-red-400'
-                  }`}>
+                  <span className={`font-orbitron text-sm font-bold ${event.color === 'cyan' ? 'text-cyan-400'
+                      : event.color === 'green' ? 'text-green-400'
+                        : event.color === 'yellow' ? 'text-yellow-400'
+                          : 'text-red-400'
+                    }`}>
                     {event.date}
                   </span>
                   <h3 className="font-pixel text-xs text-foreground mt-1">{event.title}</h3>
@@ -125,29 +122,25 @@ export const Timeline = () => {
                   initial={{ opacity: 0, y: index % 2 === 0 ? -30 : 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
-                  className={`relative flex flex-col items-center ${
-                    index % 2 === 0 ? 'mt-0' : 'mt-32'
-                  }`}
+                  className={`relative flex flex-col items-center ${index % 2 === 0 ? 'mt-0' : 'mt-32'
+                    }`}
                   style={{ width: '22%' }}
                 >
                   {/* Connector Line */}
-                  <div className={`absolute ${
-                    index % 2 === 0 ? 'bottom-0 h-8' : 'top-0 h-8'
-                  } w-px bg-gray-600`} />
+                  <div className={`absolute ${index % 2 === 0 ? 'bottom-0 h-8' : 'top-0 h-8'
+                    } w-px bg-gray-600`} />
 
                   {/* Node */}
                   <motion.div
-                    className={`relative z-10 w-14 h-14 flex items-center justify-center border-2 ${
-                      event.status === 'completed' 
-                        ? 'border-green-400 bg-green-400/20' 
+                    className={`relative z-10 w-14 h-14 flex items-center justify-center border-2 ${event.status === 'completed'
+                        ? 'border-green-400 bg-green-400/20'
                         : 'border-gray-600 bg-muted/80'
-                    }`}
+                      }`}
                     whileHover={{ scale: 1.1 }}
                   >
-                    <event.icon className={`w-6 h-6 ${
-                      event.status === 'completed' ? 'text-green-400' : 'text-gray-400'
-                    }`} />
-                    
+                    <event.icon className={`w-6 h-6 ${event.status === 'completed' ? 'text-green-400' : 'text-gray-400'
+                      }`} />
+
                     {/* Pulse effect for completed */}
                     {event.status === 'completed' && (
                       <motion.div
@@ -160,12 +153,11 @@ export const Timeline = () => {
 
                   {/* Content */}
                   <div className={`text-center ${index % 2 === 0 ? 'order-first mb-4' : 'mt-4'}`}>
-                    <span className={`font-orbitron text-lg font-bold ${
-                      event.color === 'cyan' ? 'text-cyan-400'
-                      : event.color === 'green' ? 'text-green-400'
-                      : event.color === 'yellow' ? 'text-yellow-400'
-                      : 'text-red-400'
-                    }`}>
+                    <span className={`font-orbitron text-lg font-bold ${event.color === 'cyan' ? 'text-cyan-400'
+                        : event.color === 'green' ? 'text-green-400'
+                          : event.color === 'yellow' ? 'text-yellow-400'
+                            : 'text-red-400'
+                      }`}>
                       {event.date}
                     </span>
                     <h3 className="font-pixel text-[10px] text-foreground mt-2">{event.title}</h3>

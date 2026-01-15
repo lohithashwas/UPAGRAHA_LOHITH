@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Users, Shield, Zap } from 'lucide-react';
+import { Users, Shield, Zap, Github, Linkedin, Mail, Globe } from 'lucide-react';
 import { teamData, categories } from '@/data/team';
 
 export const Team = () => {
@@ -175,6 +175,30 @@ export const Team = () => {
                                         <p className={`font-mono text-[9px] mt-1 truncate ${colors.text} opacity-70 group-hover:opacity-100`}>
                                             {member.role}
                                         </p>
+
+                                        {/* Social Links - Slide Up on Hover */}
+                                        <div className="flex justify-center gap-2 mt-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                            {member.linkedin && (
+                                                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-blue-400 transition-colors">
+                                                    <Linkedin className="w-3 h-3" />
+                                                </a>
+                                            )}
+                                            {member.github && (
+                                                <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors">
+                                                    <Github className="w-3 h-3" />
+                                                </a>
+                                            )}
+                                            {member.portfolio && (
+                                                <a href={member.portfolio} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-green-400 transition-colors">
+                                                    <Globe className="w-3 h-3" />
+                                                </a>
+                                            )}
+                                            {member.email && (
+                                                <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-red-400 transition-colors">
+                                                    <Mail className="w-3 h-3" />
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
 
                                     {/* Hover Glow Effect */}
